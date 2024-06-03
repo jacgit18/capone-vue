@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML Page</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+
+
+    <div id="intro">
+        <h1>{{counter}}</h1>
+        <button v-on:click="inc">INC</button>
+
+        <button v-on:click="dec">decrement</button>
+        <button v-on:click="rest">rest</button>
+
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#intro',
+            data: {
+                counter: 10,
+            },
+            methods: {
+                inc: function(){
+                    this.counter++
+                },
+                dec: function(){
+                    this.counter--
+                },
+                rest: function(){
+                    this.counter = 0
+                }
+                
+            }
+        });
+    </script>
+
+
+
+
+</body>
+</html>

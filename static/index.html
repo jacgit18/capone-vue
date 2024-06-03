@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML Page</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+
+
+    <div id="intro">
+        <p>{{ myfunc() }}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#intro',
+            data: {
+                fName: 'Joe',
+                lName: 'Coffee',
+                Country: 'USA'
+            },
+            methods: {
+                myfunc: function() {
+                    return "I am " + this.fName + " " + this.lName + ", I'm from " + this.Country;
+                }
+            }
+        });
+    </script>
+
+
+
+
+</body>
+</html>
