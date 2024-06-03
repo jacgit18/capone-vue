@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="intro">
+        <h1 v-on:mousemove="updatedCoord">
+            Coord {{ x }}/{{ y }}
+            - <span v-on:mousemove.stop="dummy">STOP IT</span>
+        </h1>
+        <hr>
+
+        UserName: <input type="text" v-on:keyup.enter.space="alertMe" />
+        Address: <input type="text" v-model="address" />
+        {{ address }}
+
+        <button v-on:click="inc">INC</button>
+        <h1>{{ counter * 2 >= 10 ? 'greater than 10' : 'smaller than 10' }}</h1>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#intro',
+            data: {
+                x: 0,
+                y: 0,
+                counter: 1,
+                address: 'New York'
+            },
+            methods: {
+                inc: function() {
+                    this.counter++;
+                },
+                updatedCoord: function(event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                dummy: function(event) {
+                    event.stopPropagation();
+                },
+                alertMe: function() {
+                    alert('Enter or space was pressed!');
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

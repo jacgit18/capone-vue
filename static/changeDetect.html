@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Vue App</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>{{title}}</p>
+        <button @click="show">Show para</button>
+        <p v-if="showPara">Not always visible</p>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script src="../app.js"></script>
+</body>
+</html>

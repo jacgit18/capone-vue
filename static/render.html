@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="intro">
+        <p v-if="show">first param</p>
+        <p v-else>second param</p>
+        <template v-if="show">
+            <p>in temp</p>
+            <h2>heading</h2>
+            <p>another para</p>
+        </template>
+        <button @click="show = !show">Switch</button>
+
+        <hr>
+        <ul>
+            <li v-for="(user, i) in users">{{ user }} {{ i }}</li>
+        </ul>
+        Push the new user <button @click="addUser">Add user</button>
+
+        <ul>
+            <li v-for="user in usersData">
+                <div v-for="(value, key) in user">{{ key }}: {{ value }}</div>
+            </li>
+        </ul>
+        <hr>
+
+        <span v-for="n in 10">{{ n }}</span>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#intro',
+            data: {
+                show: true,
+                users: ['tes', 'tom', 'ana'],
+                usersData: [
+                    { name: 'jack', age: '34', email: 'jack@gmail.com' },
+                    { name: 'jill', age: '68', email: 'jill@gmail.com' },
+                    { name: 'james', age: '45', email: 'james@gmail.com' }
+                ]
+            },
+            methods: {
+                addUser: function() {
+                    this.users.push('newuser');
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
