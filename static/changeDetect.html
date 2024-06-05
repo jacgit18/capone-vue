@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Vue App</title>
+    <title>Document</title>
+   
+
+    
 </head>
-
 <body>
-
     <div id="app">
+        <h1 ref="heading">{{title}}</h1>
+        <h3>{{lowercaseTitle}}</h3>
+        <button @click="show" ref="mb">Show Para</button>
+
+        <p v-if="showPara">THis is not always visible</p>
+
+       
+    </div>
+
+
+
+
+    <hr>
+    <div id="app2">
         <p>{{title}}</p>
-        <button @click="show">Show para</button>
-        <p v-if="showPara">Not always visible</p>
+        <button @click="onChange">change title</button>
     </div>
 
     <script src="../vue.js"></script>
