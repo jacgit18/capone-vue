@@ -37,42 +37,37 @@ new Vue({
     el: "#app",
     data: mydata,
 
-    beforeCreate(){
-        console.log("called before create ")
+    beforeCreate() {
+        console.log("called before create ");
     },
-    Created(){
-        console.log("created ")
+    created() {
+        console.log("created ");
     },
-    beforeMount(){
-        console.log("before mount ")
+    beforeMount() {
+        console.log("before mount ");
     },
-    mounted(){
-        console.log("mounted ")
+    mounted() {
+        console.log("mounted ");
     },
-    beforeUpdate(){
-        console.log("before update ")
+    beforeUpdate() {
+        console.log("before update ");
     },
-    updated(){
-        console.log("updated ")
+    updated() {
+        console.log("updated ");
     },
-
-    beforeDestroyed(){
-        console.log("before destroyed ")
+    beforeDestroy() {
+        console.log("before destroyed ");
     },
-
-
-    destroyed(){
-        console.log("destroyed ")
+    destroyed() {
+        console.log("destroyed ");
     },
 
     methods: {
         destroy: function() {
-           this.$destroy()
+            this.$destroy();
         },
-       
+        updateTitle: function() {
+            this.title = "Title Updated";
+        }
     }
-
-
-   
 });
-

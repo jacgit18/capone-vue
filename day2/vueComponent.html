@@ -5,32 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My First Vue App</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-
 </head>
-
 <body>
-
     <div id="app">
-        <h2>{{title}}</h2>
+        <h2>{{ title }}</h2>
         <welcome></welcome>
         <welcome></welcome>
-
         <my-comp></my-comp>
         <hr>
         <my-comp></my-comp>
-
-
-        <button  @click="title">update</button>
-        <button  @click="destroy">destroy</button>
-
-
-
-
+        <button @click="updateTitle">update</button>
+        <button @click="destroy">destroy</button>
     </div>
-    
-    
-
-    <script src="../vue.js"></script>
     <script src="./appDay2_1.js"></script>
 </body>
 </html>
