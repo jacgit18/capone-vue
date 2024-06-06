@@ -1,3 +1,4 @@
+
 <template>
   <!-- <div class="container">
     <div class="row">
@@ -25,13 +26,20 @@
     <button @click="selectedComponent='user-comment'">Comments</button>
     <button @click="selectedComponent='appAuthor'">Author</button>
     <button @click="selectedComponent='appNew'">New</button>
+    <button @click="selectedComponent='userForm'">UserForm</button>
 
  
 <div>
   <p>{{ selectedComponent }}</p>
+  <keep-alive>
+    <component :is="selectedComponent">  </component>
+  </keep-alive>
+
+
+
 </div>
     <hr>
-    <formHelper>
+   <!--  <formHelper>
       <template #header>
          <p>User Registration Form</p>
       </template>
@@ -46,7 +54,7 @@
         <button class="btn btn-primary">Register</button>
        </form>
       </template>
-    </formHelper>
+    </formHelper> -->
   </div>
 </template>
 
@@ -55,13 +63,15 @@ import Author from "./components/Author.vue";
 import Comments from "./components/Comments.vue";
 import FormHelper from "./components/FormHelper.vue";
 import NewApp from "./components/NewApp.vue";
+import UserForm from "./components/UserForm.vue";
 
 export default {
   components: {
     "user-comment": Comments,
     formHelper:FormHelper,
     appAuthor:Author,
-    appNew:NewApp
+    appNew:NewApp,
+    userForm:UserForm
   },
   data() {
     return {
