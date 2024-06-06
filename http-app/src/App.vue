@@ -1,12 +1,15 @@
 <template>
   <user-survey @survey-submit="storeSurvey"></user-survey>
+  <landing-page :results="savedSurveyResults"></landing-page>
 </template>
 
 <script>
+import LandingPage from './components/LandingPage.vue';
 import UserSurvey from "./components/UserSurvey.vue";
 export default {
   components: {
     UserSurvey,
+    LandingPage
   },
   data() {
     return {
