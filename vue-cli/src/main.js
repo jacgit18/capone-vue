@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
 // import Home from './Home.vue'
 
 // Vue.component('home-comp',
@@ -7,10 +7,12 @@ import App from './App.vue'
 // )
 
 
-
+export const eventBus = new Vue();
 
 
 new Vue({
   el: '#app',
   render: h => h(App)
 })
+
+

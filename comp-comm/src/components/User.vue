@@ -1,41 +1,54 @@
 <template>
-    <div class="container">
-  
-      <div>
-        <ul class="list-group">
-        <li lass="list-group-item" v-for="index in 5"> Server # {{index}} </li>
-        
-        </ul>
-  
-        <!-- User Status Section -->
-        <!-- <div class="col-md-4">
-          <user-status></user-status>
-        </div> -->
+  <div>
+    <h1>The User App</h1>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <p>UserName: {{ username }}</p>
+        <button @click="changeName">Change Name</button>
+        <userdetails :myName="username" :userAge="age" @nameWasReset="username=$event"></userdetails>
       </div>
-  
-       </div>
 
-  </template>
-  
-  <script>
-  import UserData from "./Userdata";
-  
-  export default {
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <p>User Age : {{ age }}</p>
+            <button @click="changeAge">Change Age</button>
+
+          <useredit :userAge="age"  @ageWasUpdated="age=$event"></useredit>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import UserDetails from "./UserDetails.vue";
+import UserEdit from "./UserEdit.vue";
+export default {
     data() {
-      return {
-        Status: "Running"
-      };
-    },
-    components: {
-      'user-status': UserData
+        return {
+            username:'admin',
+            age:25
+        }
     },
     methods: {
-      changeStatus() {
-        this.Status = "Stopped";
-      }
-    }
-  };
-  </script>
-  
+        changeName(){
+            this.username='manager'
+        },
+        changeAge(){
+            this.age=40
+        },
+        
+        
+    },
+  components: {
+    userdetails: UserDetails,
+    useredit: UserEdit,
+  },
+};
+</script>
 
-  
+<style scoped>
+div {
+  background-color: lightblue;
+}
+</style>

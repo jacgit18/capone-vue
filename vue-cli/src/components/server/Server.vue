@@ -18,7 +18,9 @@
   </template>
   
   <script>
-  import UserData from "./Userdata";
+  // import UserData from "./Userdata";
+  import UserData from "../../Userdata.vue";
+
   
   export default {
     data() {
