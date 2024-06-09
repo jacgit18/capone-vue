@@ -33,7 +33,7 @@ export default {
         return {
             enteredName:'',
             choosenRating:null,
-            invalidInput: false
+            invalidInput: false,
         }
     },
     // emits:['survey-submit'],

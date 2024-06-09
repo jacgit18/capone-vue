@@ -31,6 +31,7 @@
   
   <script>
 import ResultsApp from './ResultsApp.vue';
+
   
   export default {
    
@@ -45,10 +46,9 @@ import ResultsApp from './ResultsApp.vue';
       loadFeedbacks(){
         this.isLoading = true
         this.error = null
-        const url = 'https://capone-62225-default-rtdb.firebaseio.com/survey.json';
 
-        fetch(url).then((response)=>{
-              return response.json();
+        this.$axios.get().then((response)=>{
+              return response.data;
             }).then((data)=>{
               this.isLoading = false
               const results =[]
@@ -60,8 +60,7 @@ import ResultsApp from './ResultsApp.vue';
                 })
               }
               this.results = results
-            }).catch((error)=>{
-              console.log(error)
+            }).catch(()=>{
               this.isLoading=false
               this.error = 'Unable to load'
             })
