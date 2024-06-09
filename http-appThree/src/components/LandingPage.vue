@@ -40,7 +40,7 @@ import ResultsApp from './ResultsApp.vue';
         this.isLoading = true
         this.error = null
 
-        this.$axios.get().then((response)=>{
+        this.$axios.get("/getData").then((response)=>{
               return response.data;
             }).then((data)=>{
               this.isLoading = false

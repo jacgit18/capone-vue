@@ -69,12 +69,12 @@
       this.invalidInput = false;
       this.error=null
       
-      this.$axios.post('',
+      this.$axios.post('/',
         { userName: this.enteredName,
         rating: this.choosenRating}
       )
       .then((response)=>{
-        console.log(response.data);
+        console.log("RES FROM USER SURVEY COMP ",response.data);
       }).catch((error)=>{
         console.log(error);
         this.error=error.message

@@ -8,12 +8,15 @@ var app = express()
 
 app.use(cors)
 app.use(bodyparser.json())
+
+
 var userData=[]
 
 
 app.post('/addData',(req, res)=>{
 
 var data = req.body;
+console.log('CALLED POST METHOD ')
 userData.push(data)
 res.send(userData)
 
@@ -21,7 +24,8 @@ res.send(userData)
 })
 
 
-app.get('/addData',(req, res)=>{
+app.get('/getData',(req, res)=>{
+    console.log('CALLED GET METHOD ', userData)
 
    
     res.send(userData)

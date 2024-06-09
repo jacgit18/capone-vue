@@ -8,7 +8,10 @@ import BaseCard from './shared/BaseCard.vue';
 const app = createApp(App)
 
 app.config.globalProperties.$axios=axios // can proably 
-axios.defaults.baseURL='https://capone-62225-default-rtdb.firebaseio.com/survey.json';
+// axios.defaults.baseURL='https://capone-62225-default-rtdb.firebaseio.com/survey.json'; // API
+axios.defaults.baseURL='http://localhost:4000'; // backend
+
+
 
 
 app.component('base-card', BaseCard)
@@ -21,11 +24,13 @@ axios.interceptors.request.use((config)=>{
 })
 
 // This data isnt defined in the  frontend so nothing will new will render
-axios.interceptors.response.use((response)=>{
-    console.log(response.data={users: {title:'admin',email:'admin@mail.com'}});
-    
-    return response
-})
+axios.interceptors.response.use((response) => {
+    const modifiedData = { users: { title: 'admin', email: 'admin@mail.com' } };
+    console.log("STUFF ",modifiedData);  // Log the modified data
+    response.data = modifiedData;  // Modify the response data
+    return response;
+});
+
 
 
 
