@@ -21,6 +21,7 @@
           Poor
         </div>
         <p v-if="invalidInput" style="color: red;">Please enter a username and select a rating.</p>
+        <p v-if="error">{{ error }}</p>
         <div>
           <base-button>Submit</base-button>
         </div>
@@ -37,6 +38,8 @@ export default {
       enteredName: '',
       choosenRating: null,
       invalidInput: false,
+      error:null
+
     };
   },
   methods: {
@@ -47,6 +50,7 @@ export default {
         return;
       }
       this.invalidInput = false;
+      this.error=null
 
             // this.$emit('survey-submit',{
             //     userName:this.enteredName,

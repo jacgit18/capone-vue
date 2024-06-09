@@ -1,33 +1,26 @@
 <template>
-
-   <section>
+  <section>
     <base-card>
-<h2>User shoop feed</h2>
-<div>
+      <h2>User shop feed</h2>
+      <div>
+        <base-button @click="loadFeedbacks">Load all feedback</base-button>
+      </div>
 
-    <base-button>Load all feedback</base-button>
-</div>
+      <p v-if="isLoading">Loading...</p>
+      <p v-else-if="!isLoading && error">{{ error }}</p>
+      <p v-else-if="!isLoading && (!results || results.length === 0)">No feedback found</p>
 
-<p v-if="isLoading">Loading...</p>
-<p v-else-if="error"> n</p>
-
-<p v-else-if="!isLoading && (!results || results.length===0)"> no feedback found</p>
-
-<ul v-else>
-    <surveyResults 
-    v-for="result in 
-    results" 
-    :key="result.id" 
-    :name="result.name" 
-    :rating="result.rating">
-
-    </surveyResults>
-</ul>
-</base-card>
-
-
-   </section>
-  </template>
+      <ul v-else>
+        <survey-results 
+          v-for="result in results" 
+          :key="result.id" 
+          :name="result.name" 
+          :rating="result.rating">
+        </survey-results>
+      </ul>
+    </base-card>
+  </section>
+</template>
   
   <script>
 import ResultsApp from './ResultsApp.vue';
@@ -76,28 +69,27 @@ import ResultsApp from './ResultsApp.vue';
   };
   </script>
   
-  <style scoped>
-li{
-    margin: 1em 0;
-    border: 1px solid salmon;
-    padding: 1rem;
+<style scoped>
+li {
+  margin: 1em 0;
+  border: 1px solid salmon;
+  padding: 1rem;
 }
 
-.highlight{
-font-weight: bold;
+.highlight {
+  font-weight: bold;
 }
 
-
-.rating--poor{
-    color: red;
+.rating--poor {
+  color: red;
 }
 
-.rating--average{
-    color: darkblue;
+.rating--average {
+  color: darkblue;
 }
 
-.rating--great{
-    color: green;
+.rating--great {
+  color: green;
 }
 </style>
   
