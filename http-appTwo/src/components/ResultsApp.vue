@@ -1,54 +1,48 @@
 <template>
+  <li>
+    <p>
+      <span class="highlight">
+        {{ name }}
+      </span> shopping exp
 
-    <li>
-        <p>
-            <span class="highlight">
-            {{ name }}
-            </span> shopping exp
+      <span :class="ratingClass">
+        {{ rating }}
+      </span>
+    </p>
+  </li>
+</template>
 
-            <span :class="ratingClass">
-                {{ rating }}
-                </span> shopping exp
-        </p>
-    </li>
-  </template>
-  
-  <script>
+<script>
+export default {
+  props: ['name', 'rating'],
+  computed: {
+    ratingClass() {
+      return 'rating--' + this.rating;
+    }
+  }
+};
+</script>
 
-  
-  export default {
-    props:['name', 'rating'],
-    computed: {
-      ratingClass(){
-        return  'higlight rating--' +this.rating
-      }
-    },
-       
-  };
-  </script>
-  
-  <style scoped>
-li{
-    margin: 1em 0;
-    border: 1px solid salmon;
-    padding: 1rem;
+<style scoped>
+li {
+  margin: 1em 0;
+  border: 1px solid salmon;
+  padding: 1rem;
 }
 
-.highlight{
-font-weight: bold;
+.highlight {
+  font-weight: bold;
 }
 
-
-.rating--poor{
-    color: red;
+.rating--poor {
+  color: red;
 }
 
-.rating--average{
-    color: darkblue;
+.rating--average {
+  color: darkblue;
 }
 
-.rating--great{
-    color: green;
+.rating--great {
+  color: green;
 }
 </style>
-  
