@@ -7,7 +7,7 @@ import BaseCard from './shared/BaseCard.vue';
 
 const app = createApp(App)
 
-app.config.globalProperties.$axios=axios // can proably 
+app.config.globalProperties.$axios=axios // can proably
 // axios.defaults.baseURL='https://capone-62225-default-rtdb.firebaseio.com/survey.json'; // API
 axios.defaults.baseURL='http://localhost:4000'; // backend
 
