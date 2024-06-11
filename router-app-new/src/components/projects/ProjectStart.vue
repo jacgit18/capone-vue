@@ -4,13 +4,14 @@
         <hr>
         <ul class="list-group">
 
-            <router-link 
-            tag="li"
-            to="/user/1"
+            <router-link
+            v-for="project in projects"
+            :key="project.projectID"
+            :to="'/project' + project.projectID" 
             class="list-group-item"
             style="cursor: pointer;"
             >
-            User1
+            {{ project.projectID }}
             </router-link>
 
         </ul>
@@ -19,3 +20,21 @@
 
     </div>
 </template>
+
+
+<script>
+import { data } from './data';
+    export default {
+        data(){
+            return {
+                projects: data.projects
+            }
+        }
+       
+        }
+    
+
+</script>
+
+<style>
+</style>

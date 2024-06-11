@@ -10,7 +10,7 @@
                 <p>Persist accross router view because router view</p>
                 <router-view name="header-top"></router-view>
                 <router-view></router-view>
-                <!-- <router-view name="project"></router-view> -->
+                <router-view name="project"></router-view>
 
                 <router-view name="header-bottom"></router-view>
 
