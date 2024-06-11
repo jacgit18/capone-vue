@@ -13,7 +13,7 @@
 export default{
     methods:{
         navigate(){
-            this.$router.push({name:'home'})
+            this.$router.push({name:'project'})
         }
     }
 }

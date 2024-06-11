@@ -9,6 +9,7 @@
         <router-link
         tag="button"
         v-for="user in filteredUsers"
+        :key="user.id" 
         :to="{name: 'projectEdit', params:{id:id}}">
         Edit Project
         </router-link>

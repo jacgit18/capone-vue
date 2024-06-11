@@ -29,7 +29,7 @@ export  const routes=[
 
     ,children:[
         {path:'', component:ProjectStart},
-        {path:':id', component:ProjectsDetail},
+        {path:':id', component:ProjectsDetail,  name: 'projectDetail'},
         {path:':id/edit', component:ProjectEdit},
     ]
 },
