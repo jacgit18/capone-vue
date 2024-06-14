@@ -16,15 +16,15 @@
   
   <script setup>
   import { computed, onMounted } from "vue";
-import axiosClient from "../axiosClient";
+// import axiosClient from "../axiosClient";
 import store from "../store";
   
   const meals = computed(() => store.state.meals);
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-  onMounted(async () => {
-    const response=await axiosClient.get('/list.php?i=list')
-    console.log(response.data);
-  })
+  // onMounted(async () => {
+  //   const response=await axiosClient.get('/list.php?i=list')
+  //   console.log(response.data);
+  // })
   </script>
   
   <style scoped></style>
