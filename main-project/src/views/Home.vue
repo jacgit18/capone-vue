@@ -3,7 +3,7 @@
       <input
         type="text"
         class="rounded-border-2 border-red-200 w-fill"
-        placeholder="Search for todays menu"
+        placeholder="Search for todays menu HOME"
       />
   
       <div class="flex justify-center gap-2 mt-2">
