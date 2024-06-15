@@ -8,4 +8,3 @@ export const axiosClient = axios.create({
 
 
 
-// import.meta.env.APP_BASE_URL
