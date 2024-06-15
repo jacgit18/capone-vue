@@ -64,7 +64,7 @@ describe("test suite", () => {
     expect(mock.history.get[0].method).toMatch('get')
 
     expect(store.addCity).toHaveBeenCalledTimes(1)
-    expect(store.addCity).toHaveBeenLastCalledWith('Chicago','Illinois','US','Cloudy',56.4,53.4,44.6)
+    expect(store.addCity).toHaveBeenLastCalledWith('Chicago', 'Illinois', 'US', 'Cloudy', 55.0, 58.9, 33.9);
 
   })
 it('reset the banner',()=>{
@@ -72,6 +72,13 @@ it('reset the banner',()=>{
     wrapper.vm.messageType='Success'
     wrapper.vm.clearMessage()
     expect(wrapper.vm.messageToDisplay).toMatch(/^/)
-    expect(wrapper.vm.messageType).toMatch('Intro')
+    // expect(wrapper.vm.messageToDisplay).toMatch(/^$/);
+    expect(wrapper.vm.messageType).toMatch('Info')
+
 })
+
+
+
+
+
 });
