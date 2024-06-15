@@ -1,5 +1,9 @@
 
 
 export const state = {
-    searchedMeals: []
+    searchedMeals: [],
+    mealsByLetter: [],
+    mealsByIngredient: [],
+    ingredient: []
+
 };
