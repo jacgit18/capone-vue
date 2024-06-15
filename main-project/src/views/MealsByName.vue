@@ -11,7 +11,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
 
       <div v-for="meal of meals" :key="meal.idMeal" class="bg-blue shadow rounded">
-<router-link :to="{name:'mealDetails',params:{}">
+<router-link :to="{name:'mealDetails',params:{id: meal.idMeal}}">
         <img :src="meal.strMealThumb" />
       </router-link>
         <h3 class="p-3 font-semibold">{{ meal.strMeal }}</h3>

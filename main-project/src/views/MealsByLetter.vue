@@ -23,7 +23,7 @@
 import { computed, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import Meals from "../components/Meals.vue";
-import store from "../store";
+import store from "../store/index";
 const route = useRoute();
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
