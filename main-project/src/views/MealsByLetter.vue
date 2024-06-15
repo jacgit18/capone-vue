@@ -17,6 +17,9 @@
   </div>
 
   <Meals :meals="meals" />
+
+  <!-- <pre> {{ meals }} </pre> -->
+
 </template>
 
 <script setup>

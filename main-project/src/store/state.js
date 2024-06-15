@@ -4,6 +4,8 @@ export const state = {
     searchedMeals: [],
     mealsByLetter: [],
     mealsByIngredient: [],
-    ingredient: []
+    ingredient: [],
+    dispMeal: []
+
 
 };

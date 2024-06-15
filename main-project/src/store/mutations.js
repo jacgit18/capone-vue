@@ -1,30 +1,25 @@
 // Define your mutations
-const setSearchedMeals = (state, meals) => {
-    state.searchedMeals = meals;
-  };
-
-
-  const setMealsByLetter = (state, meals) => {
-    state.mealsByLetter = meals;
-  };
-
-  const setMealsByIngredient = (state, meals) => {
-    state.mealsByIngredient = meals;
-  };
-
-
-  const setIngredient = (state, meals) => {
-    state.ingredient = meals;
-  };
-
+export const mutations = {
+    setSearchedMeals(state, meals) {
+      state.searchedMeals = meals;
+    },
+  
+    setMealsByLetter(state, meals) {
+      state.mealsByLetter = meals;
+    },
+  
+    setMealsByIngredient(state, meals) {
+      state.mealsByIngredient = meals;
+    },
+  
+    setIngredient(state, ingredient) {
+      state.ingredient = ingredient;
+    },
 
   
-  // Export an object containing your mutations
-  export const mutations = {
-    setSearchedMeals,
-    setMealsByLetter,
-    setMealsByIngredient,
-    setIngredient
+    displayMeals(state, meals) {
+        state.dispMeal = meals;
+      }
 
   };
   
